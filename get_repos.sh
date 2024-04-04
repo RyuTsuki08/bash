@@ -12,9 +12,9 @@ then
     for repo in $repos
     do
         echo "You are $user"
-        echo "Cloning repo $repo...."
+        echo "Cloning repo $repo..."
         gh repo clone $user/${repo//\"} 
-        sudo mv ${repo//\"} $PROJECT_DIR
+        sudo mv $repo ~/projects
     done
 else
    echo '''
