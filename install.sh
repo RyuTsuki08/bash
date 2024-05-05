@@ -1,9 +1,9 @@
 #!/bin/bash
 
+# add my user to sudoers file
 # install the programs that need it
 sudo apt-get update -y 
-sudo apt install curl wget unzip zip gnupg2 
-sudo apt install nvim kitty zsh
+sudo apt install curl wget unzip zip gnupg2  snapd nvim kitty zsh flatpak plasma-discover-backend-flatpak
 
 # change default shell to zsh
 chsh -s $(which zsh)
@@ -30,6 +30,8 @@ sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packa
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 && sudo apt update \
 && sudo apt install gh -y
+
+
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
